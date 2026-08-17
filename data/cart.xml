@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<carrito>
+  <item>
+    <session>me9uk8kam6t6ulhlmg8b1ho364</session>
+    <id>42</id>
+    <nombre>Anillo de tiburon</nombre>
+    <precio>550.00</precio>
+    <cantidad>3</cantidad>
+    <imagen>anillo_tiburon.jpg</imagen>
+  </item>
+  <item>
+    <session>me9uk8kam6t6ulhlmg8b1ho364</session>
+    <id>43</id>
+    <nombre>Arete de tiburon</nombre>
+    <precio>500.00</precio>
+    <cantidad>1</cantidad>
+    <imagen>arete_tiburon.jpg</imagen>
+  </item>
+  <item>
+    <session>me9uk8kam6t6ulhlmg8b1ho364</session>
+    <id>44</id>
+    <nombre>Anillo de cabeza de tiburon</nombre>
+    <precio>600.00</precio>
+    <cantidad>1</cantidad>
+    <imagen>anillo_cabeza_tiburon.jpg</imagen>
+  </item>
+</carrito>

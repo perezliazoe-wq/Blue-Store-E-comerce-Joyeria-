@@ -1,0 +1,673 @@
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+    background-color: #f4f7f6;
+}
+
+.contenido{
+    flex:1;
+    padding:30px;
+}
+
+/* HEADER */
+.header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#0c1f36;
+    padding:12px 40px;
+    flex-wrap:wrap;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+}
+
+.logo{
+    width:60px;
+    margin-right:15px;
+}
+
+.titulo{
+    color:white;
+    margin:0;
+    font-size:1.5em;
+}
+
+.menu{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:1em;
+    transition: color 0.3s;
+}
+
+.menu a:hover{
+    color:#a4bdd7;
+}
+
+/* BOTONES GENERALES (Galería, Carrito, Header) */
+.btn{
+    background:#164370;
+    color:white;
+    border:none;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    text-decoration:none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.btn:hover{
+    background:#376395;
+}
+
+/* GALERIA */
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+    max-width:1100px;
+    margin:40px auto;
+    padding:0 20px;
+}
+
+.producto{
+    border:1px solid #ddd;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+    background:#a4bdd7;
+    box-shadow:0 6px 14px rgba(0,0,0,0.15);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    transition:transform 0.3s;
+}
+
+.producto:hover{
+    transform:translateY(-5px);
+}
+
+.producto img{
+    width:240px;
+    height:240px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.producto h3{
+    margin:10px 0 5px 0;
+    font-size:18px;
+}
+
+.producto p{
+    margin-bottom:18px;
+    font-size:0.95em;
+}
+
+.producto .btn{
+    margin-top:auto;
+    padding:10px 20px;
+}
+
+/* TABLA CARRITO */
+table{
+    margin:40px auto;
+    border-collapse:separate;
+    border-spacing:0;
+    width:75%;
+    background:#37557c;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+
+th{
+    background:#0c233f;
+    color:white;
+    padding:12px;
+    font-size:15px;
+    text-align:center;
+}
+
+td{
+    padding:12px;
+    border-top:1px solid rgba(255,255,255,0.1);
+    color:white;
+    text-align:center;
+    font-size:0.95em;
+}
+
+tr:hover{
+    background:#45658f;
+}
+
+td img{
+    width:60px;
+    border-radius:8px;
+    max-height:60px;
+}
+
+table .btn{
+    background:#163c67;
+    padding:6px 12px;
+    font-size:0.9em;
+}
+
+table .btn:hover{
+    background:#1e446f;
+}
+
+.table-wrapper{
+    width:100%;
+    overflow-x:auto;
+}
+
+/* DETALLE DE PRODUCTO INDIVIDUAL */
+.producto-container{
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.producto-img{
+    width:100%;
+    max-width:300px;
+    margin:20px auto;
+    display:block;
+    border-radius:10px;
+}
+
+.precio{
+    font-size:22px;
+    font-weight:bold;
+    margin:10px 0;
+    color:#164370;
+}
+
+.descripcion{
+    margin-bottom:20px;
+    line-height:1.6;
+}
+
+.cantidad-input{
+    width:60px;
+    padding:8px;
+    margin:10px 5px;
+    border:1px solid #ddd;
+    border-radius:5px;
+    font-size:1em;
+}
+
+/* --- FORMULARIOS UNIFICADOS (LOGIN Y REGISTRO) --- */
+.form-container {
+    max-width: 450px;
+    margin: 60px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 8px;
+    color: #34495e;
+    font-weight: 600;
+    text-align: left;
+    font-size:0.95em;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #dcdde1;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    font-size:1em;
+}
+
+.form-container input:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow:0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Mensajes de error en formularios */
+.error-msg, .msg-login {
+    background-color: #ffeded;
+    color: #d63031;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #fab1a0;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Botón específico solo para el formulario (100% de ancho) */
+.form-container .btn {
+    width: 100%;
+    background-color: #2c3e50;
+    color: white;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight:bold;
+    border:none;
+}
+
+.form-container .btn:hover {
+    background-color: #1a252f;
+}
+
+/* --- APARTADO TÉRMINOS Y CONDICIONES --- */
+.terminos-container {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px 0;
+    border: 1px solid #edf0f2;
+}
+
+.terminos-container div {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.terminos-container div:last-child {
+    margin-bottom: 0;
+}
+
+.terminos-container input[type="checkbox"] {
+    width: 18px !important;
+    height: 18px !important;
+    margin-right: 12px !important;
+    margin-top: 2px !important;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.terminos-container label {
+    font-size: 0.88em;
+    font-weight: normal;
+    color: #576574;
+    line-height: 1.4;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.terminos-container a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.terminos-container a:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+.footer{
+    background:#0c1f36;
+    color:white;
+    text-align:center;
+    padding:15px 20px;
+    margin-top: auto;
+    font-size:0.95em;
+}
+
+/* ============================================
+   MEDIA QUERIES - DISEÑO RESPONSIVO
+   ============================================ */
+
+/* TABLETA: 768px a 1024px */
+@media (max-width: 1024px) {
+    .contenido{
+        padding:20px;
+    }
+
+    .header{
+        padding:12px 20px;
+        gap:15px;
+    }
+
+    .logo{
+        width:50px;
+        margin-right:10px;
+    }
+
+    .titulo{
+        font-size:1.3em;
+    }
+
+    .menu{
+        gap:15px;
+        font-size:0.95em;
+    }
+
+    .galeria{
+        grid-template-columns:repeat(2,1fr);
+        gap:30px;
+        max-width:900px;
+    }
+
+    .producto img{
+        width:180px;
+        height:180px;
+    }
+
+    table{
+        width:90%;
+    }
+
+    th, td{
+        padding:10px;
+        font-size:0.9em;
+    }
+
+    td img{
+        width:50px;
+    }
+
+    .form-container{
+        margin:40px 20px;
+        max-width:100%;
+        width:auto;
+    }
+}
+
+/* TELÉFONO: hasta 767px */
+@media (max-width: 767px) {
+    .contenido{
+        padding:15px;
+    }
+
+    /* HEADER RESPONSIVO */
+    .header{
+        flex-direction:column;
+        padding:10px;
+        gap:15px;
+        justify-content:center;
+    }
+
+    .logo-area{
+        width:100%;
+        justify-content:center;
+    }
+
+    .logo{
+        width:45px;
+        margin-right:8px;
+    }
+
+    .titulo{
+        font-size:1.1em;
+    }
+
+    .menu{
+        width:100%;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+        font-size:0.9em;
+    }
+
+    .menu a{
+        padding:8px 10px;
+        background:rgba(255,255,255,0.1);
+        border-radius:5px;
+        flex:1;
+        min-width:80px;
+        text-align:center;
+    }
+
+    /* GALERIA EN TELÉFONO */
+    .galeria{
+        grid-template-columns:1fr;
+        gap:20px;
+        max-width:100%;
+        margin:20px auto;
+        padding:0 10px;
+    }
+
+    .producto{
+        padding:20px;
+    }
+
+    .producto img{
+        width:100%;
+        max-width:250px;
+        height:auto;
+    }
+
+    .producto h3{
+        font-size:1.1em;
+    }
+
+    .producto p{
+        font-size:0.9em;
+    }
+
+    /* TABLA RESPONSIVA */
+    table{
+        width:100%;
+        margin:20px auto;
+        font-size:0.85em;
+    }
+
+    th{
+        padding:8px;
+        font-size:0.8em;
+    }
+
+    td{
+        padding:6px 4px;
+        font-size:0.8em;
+    }
+
+    td img{
+        width:35px;
+        height:35px;
+    }
+
+    table .btn{
+        padding:4px 6px;
+        font-size:0.7em;
+        display:block;
+        margin:2px 0;
+    }
+
+    /* FORMULARIO DENTRO DE TABLA */
+    table form{
+        display:flex;
+        flex-direction:column;
+        gap:4px;
+    }
+
+    table input[type="number"]{
+        width:100%;
+        padding:4px;
+        font-size:0.8em;
+        box-sizing:border-box;
+    }
+
+    table input[type="hidden"]{
+        display:none;
+    }
+
+    /* WRAPPER DE TABLA PARA SCROLL */
+    .table-wrapper{
+        width:100%;
+        overflow-x:auto;
+        margin:20px 0;
+        -webkit-overflow-scrolling:touch;
+    }
+
+    .table-wrapper table{
+        margin:0;
+    }
+
+    /* PRODUCTO INDIVIDUAL */
+    .producto-container{
+        padding:20px 10px;
+        max-width:100%;
+    }
+
+    .producto-img{
+        max-width:100%;
+        height:auto;
+    }
+
+    .precio{
+        font-size:1.5em;
+    }
+
+    .cantidad-input{
+        width:50px;
+        padding:6px;
+        font-size:0.9em;
+    }
+
+    /* FORMULARIOS */
+    .form-container{
+        max-width:100%;
+        margin:30px 0;
+        padding:20px;
+        width:auto;
+    }
+
+    .form-container h2{
+        font-size:1.4em;
+        margin-bottom:20px;
+    }
+
+    .form-container label{
+        font-size:0.9em;
+        margin-bottom:6px;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="password"],
+    .form-container input[type="email"]{
+        padding:10px;
+        margin-bottom:15px;
+        font-size:1em;
+    }
+
+    .form-container .btn{
+        padding:12px;
+        font-size:1em;
+    }
+
+    /* TÉRMINOS Y CONDICIONES */
+    .terminos-container{
+        padding:12px;
+        margin:15px 0;
+    }
+
+    .terminos-container input[type="checkbox"]{
+        width:16px !important;
+        height:16px !important;
+    }
+
+    .terminos-container label{
+        font-size:0.8em;
+    }
+
+    /* FOOTER */
+    .footer{
+        padding:12px 10px;
+        font-size:0.85em;
+    }
+
+    /* BOTONES GENERALES */
+    .btn{
+        padding:10px 15px;
+        font-size:0.95em;
+    }
+
+    h1{
+        font-size:1.5em !important;
+    }
+
+    h2{
+        font-size:1.3em !important;
+    }
+
+    h3{
+        font-size:1.1em !important;
+    }
+
+    p{
+        font-size:0.95em;
+    }
+
+    /* BOTONES Y ENLACES EN CARRITO */
+    div[style*="text-align: center"] a.btn{
+        display:inline-block;
+        width:auto;
+        margin:10px auto;
+        padding:12px 20px;
+    }
+
+    /* FORMULARIO PAYPAL */
+    form[action*="sandbox.paypal.com"]{
+        max-width:100% !important;
+    }
+
+    form[action*="sandbox.paypal.com"] button{
+        max-width:100%;
+        font-size:1em !important;
+        width:100%;
+        padding:12px !important;
+        background:#0070ba !important;
+        border:none !important;
+        border-radius:5px !important;
+        font-weight:bold !important;
+        cursor:pointer !important;
+        color:white !important;
+    }
+
+    form[action*="sandbox.paypal.com"] button:hover{
+        background:#005a94 !important;
+    }
+
+    /* CONTENEDORES DE MÉTODO DE PAGO */
+    div[style*="background:#FFC439"] {
+        width:100% !important;
+        box-sizing:border-box;
+    }
+
+    div[style*="background:#164370"][style*="padding:20px"] {
+        width:100% !important;
+        box-sizing:border-box;
+    }
+}
